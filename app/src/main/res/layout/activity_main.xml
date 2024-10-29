@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/welcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/doc"
+    tools:context=".MainActivity">
+
+  <TextView
+      android:id="@+id/textView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="60dp"
+      android:layout_marginBottom="32dp"
+      android:text="WELCOME TO OUR HEALTH SERVICE CENTER"
+      android:textAlignment="viewStart"
+      android:textColor="@color/blue"
+      android:textSize="24sp"
+      android:textStyle="bold|italic"
+      app:layout_constraintBottom_toTopOf="@+id/textView2"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="73dp"
+      android:text="Providing quality healthcare services led by Dr. Andile Clifford Tshabalala."
+      android:textAlignment="viewStart"
+      android:textColor="@color/black"
+      android:textSize="18sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toTopOf="@+id/textView3"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+  <TextView
+      android:id="@+id/textView3"
+      android:layout_width="273dp"
+      android:layout_height="0dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginBottom="54dp"
+      android:text="Our services include general consultations, specialist referrals, wellness checkups, and 24-hour emergency care. We are dedicated to providing patient-centered care with a focus on your health and well-being."
+      android:textAlignment="viewStart"
+      android:textColor="@color/black"
+      android:textSize="15sp"
+      app:layout_constraintBottom_toTopOf="@+id/textView4"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+  <TextView
+      android:id="@+id/textView4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginBottom="86dp"
+      android:text="Why Choose Us: \n• Highly experienced medical professionals \n• State-of-the-art medical equipment \n• Personalized care and attention \n• Convenient location and easy appointment booking"
+      android:textAlignment="viewStart"
+      android:textColor="#000000"
+      android:textSize="15sp"
+      app:layout_constraintBottom_toTopOf="@+id/get_started"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+  <Button
+      android:id="@+id/get_started"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginBottom="113dp"
+      android:backgroundTint="#00BFA5"
+      android:text="Get Started"
+      android:textColor="@color/white"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

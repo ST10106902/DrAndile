@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="@string/about_us"
+        android:id="@+id/menu_About_Us"/>
+    <item
+        android:title="@string/our_centre"
+        android:id="@+id/menu_Our_Centre"/>
+    <item
+        android:title="@string/our_doctors"
+        android:id="@+id/menu_Our_Doctors"/>
+    <item
+        android:title="@string/book_appointment"
+        android:id="@+id/menu_Book_Appointment"/>
+    <item
+        android:title="@string/admin"
+        android:id="@+id/menu_Admin"/>
+    <item
+        android:title="@string/dashboard"
+        android:id="@+id/menu_DashBoard"/>
+</menu>

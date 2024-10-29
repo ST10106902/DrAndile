@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookAppointment"
+    android:background="@drawable/img_3">
+
+    <!-- Heading -->
+    <TextView
+        android:id="@+id/headingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book an Appointment"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Patient Name Text -->
+    <TextView
+        android:id="@+id/patientNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Patient Name"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headingText" />
+
+    <!-- Patient Name Input -->
+    <EditText
+        android:id="@+id/patientNameInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patientNameText" />
+
+    <!-- Patient Contact Number Text -->
+    <TextView
+        android:id="@+id/contactNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact Number"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patientNameInput" />
+
+    <!-- Patient Contact Number Input -->
+    <EditText
+        android:id="@+id/contactNumberInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter your contact number"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contactNumberText" />
+
+    <!-- Patient Email Text -->
+    <TextView
+        android:id="@+id/emailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Address"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contactNumberInput" />
+
+    <!-- Patient Email Input -->
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter your email address"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailText" />
+
+    <!-- Select Doctor Text -->
+    <TextView
+        android:id="@+id/selectDoctorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Doctor"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailInput" />
+
+    <!-- Spinner to select Doctor -->
+    <Spinner
+        android:id="@+id/doctorSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectDoctorText" />
+
+    <!-- Select Date Text -->
+    <TextView
+        android:id="@+id/selectDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/doctorSpinner" />
+
+    <!-- Button to open Date Picker -->
+    <Button
+        android:id="@+id/datePickerButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#00ACC1"
+        android:text="Pick a date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectDateText" />
+
+    <!-- Select Time Text -->
+    <TextView
+        android:id="@+id/selectTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Time"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/datePickerButton"
+        android:layout_marginTop="16dp" />
+
+    <!-- Time Spinner for selecting available times -->
+    <Spinner
+        android:id="@+id/timeSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectTimeText" />
+
+    <!-- Appointment Notes Input -->
+    <TextView
+        android:id="@+id/appointmentNotesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appointment Notes (Optional)"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeSpinner"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/appointmentNotesInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter any special notes or requests"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appointmentNotesText" />
+
+    <!-- Confirm Booking Button -->
+    <Button
+        android:id="@+id/confirmBookingButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00BFA5"
+        android:text="Confirm Booking"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appointmentNotesInput"
+        android:layout_marginTop="24dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

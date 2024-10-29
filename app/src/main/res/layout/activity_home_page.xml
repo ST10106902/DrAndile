@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePage"
+    android:background="@color/blue">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:title="Welcome to Dr. Andile's Practice"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <!-- Dr. Andile's Image -->
+    <ImageView
+        android:id="@+id/drImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/img_4"
+    android:contentDescription="Dr. Andile"
+    app:layout_constraintTop_toBottomOf="@id/toolbar"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:scaleType="centerCrop"
+    android:layout_marginBottom="16dp"/>
+
+    <!-- About Section -->
+    <TextView
+        android:id="@+id/aboutTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About Dr. Andile's Practice"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/drImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/aboutDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Dr. Andile’s healthcare practice provides exceptional medical services with a focus on family health, preventive care, and wellness. Our goal is to offer personalized, quality medical services for all patients. Services include general consultations, routine check-ups, pediatric care, and specialized treatment plans."
+        android:textSize="16sp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/aboutTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:textColor="@color/black" />
+
+    <!-- Services Section -->
+    <TextView
+        android:id="@+id/servicesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Our Services"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/aboutDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black" />
+
+    <!-- Service List Images -->
+    <LinearLayout
+        android:id="@+id/servicesContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/servicesTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/serviceImage1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/consult"
+        android:contentDescription="General Consultation"
+        android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/serviceImage2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/pedistric"
+        android:contentDescription="Pediatric Care"
+        android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/serviceImage3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/welness"
+        android:contentDescription="Wellness Checkups"
+        android:layout_margin="8dp" />
+    </LinearLayout>
+
+    <!-- Contact Information Section -->
+    <TextView
+        android:id="@+id/contactTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact Us"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/servicesContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/contactInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Location: 123 Health St, Wellness City\nPhone: +27 123 456 7890\nEmail: info@drandileshealth.co.za"
+        android:textSize="16sp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/contactTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:textColor="@color/black" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

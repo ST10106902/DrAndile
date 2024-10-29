@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1085019264954",
+    "project_id": "dr-andile",
+    "storage_bucket": "dr-andile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085019264954:android:a453f4f5c10bb7d4082f83",
+        "android_client_info": {
+          "package_name": "com.example.drandile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfM_muG_a2CwRdRzI6ZoDGE0Ryloc5k68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

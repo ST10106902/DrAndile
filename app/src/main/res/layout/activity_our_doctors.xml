@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Heading -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meet Our Doctors"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#3E4A59"
+            android:layout_gravity="center"
+            android:paddingBottom="24dp"/>
+
+        <!-- Doctor 1 Info -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:background="@drawable/rounded_card"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/doctor1Image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/img_4"
+                android:contentDescription="Doctor Image"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/circle_background"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/doctor1Name"
+                    android:text="Dr. Andile Tshabalala"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#3E4A59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/doctor1Specialty"
+                    android:text="Specialty: Cardiology"
+                    android:textSize="16sp"
+                    android:textColor="#5A5A5A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Doctor 2 Info -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:background="@drawable/rounded_card"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/doctor2Image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/img_10"
+                android:contentDescription="Doctor Image"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/circle_background"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/doctor2Name"
+                    android:text="Dr. John Smith"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#3E4A59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/doctor2Specialty"
+                    android:text="Specialty: Neurology"
+                    android:textSize="16sp"
+                    android:textColor="#5A5A5A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Doctor 3 Info -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:background="@drawable/rounded_card"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/doctor3Image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/img_11"
+                android:contentDescription="Doctor Image"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/circle_background"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/doctor3Name"
+                    android:text="Dr. Jane Doe"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#3E4A59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/doctor3Specialty"
+                    android:text="Specialty: Pediatrics"
+                    android:textSize="16sp"
+                    android:textColor="#5A5A5A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
