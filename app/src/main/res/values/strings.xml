@@ -48,4 +48,14 @@
     <string name="dashboard">DashBoard</string>
     <string name="our_centre">Our Centre</string>
     <string name="about_us">About Us</string>
+    <string name="specialty_pediatrics">Specialty: Pediatrics</string>
+    <string name="dr_jane_doe">Dr. Jane Doe</string>
+    <string name="doctor_image">Doctor Image</string>
+    <string name="specialty_neurology">Specialty: Neurology</string>
+    <string name="dr_john_smith">Dr. John Smith</string>
+    <string name="doctor_image1">Doctor Image</string>
+    <string name="specialty_cardiology">Specialty: Cardiology</string>
+    <string name="dr_andile_tshabalala">Dr. Andile Tshabalala</string>
+    <string name="doctor_imagew">Doctor Image</string>
+    <string name="meet_our_doctors">Meet Our Doctors</string>
 </resources>

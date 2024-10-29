@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Meet Our Doctors"
+            android:text="@string/meet_our_doctors"
             android:textSize="24sp"
             android:textStyle="bold"
             android:gravity="center"
@@ -36,7 +36,7 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:src="@drawable/img_4"
-                android:contentDescription="Doctor Image"
+                android:contentDescription="@string/doctor_image"
                 android:scaleType="centerCrop"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/circle_background"/>
@@ -49,7 +49,7 @@
 
                 <TextView
                     android:id="@+id/doctor1Name"
-                    android:text="Dr. Andile Tshabalala"
+                    android:text="@string/dr_andile_tshabalala"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:textColor="#3E4A59"
@@ -58,7 +58,7 @@
 
                 <TextView
                     android:id="@+id/doctor1Specialty"
-                    android:text="Specialty: Cardiology"
+                    android:text="@string/specialty_cardiology"
                     android:textSize="16sp"
                     android:textColor="#5A5A5A"
                     android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:src="@drawable/img_10"
-                android:contentDescription="Doctor Image"
+                android:contentDescription="@string/doctor_image1"
                 android:scaleType="centerCrop"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/circle_background"/>
@@ -94,7 +94,7 @@
 
                 <TextView
                     android:id="@+id/doctor2Name"
-                    android:text="Dr. John Smith"
+                    android:text="@string/dr_john_smith"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:textColor="#3E4A59"
@@ -103,7 +103,7 @@
 
                 <TextView
                     android:id="@+id/doctor2Specialty"
-                    android:text="Specialty: Neurology"
+                    android:text="@string/specialty_neurology"
                     android:textSize="16sp"
                     android:textColor="#5A5A5A"
                     android:layout_width="wrap_content"
@@ -126,7 +126,7 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:src="@drawable/img_11"
-                android:contentDescription="Doctor Image"
+                android:contentDescription="@string/doctor_image"
                 android:scaleType="centerCrop"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/circle_background"/>
@@ -139,7 +139,7 @@
 
                 <TextView
                     android:id="@+id/doctor3Name"
-                    android:text="Dr. Jane Doe"
+                    android:text="@string/dr_jane_doe"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:textColor="#3E4A59"
@@ -148,7 +148,7 @@
 
                 <TextView
                     android:id="@+id/doctor3Specialty"
-                    android:text="Specialty: Pediatrics"
+                    android:text="@string/specialty_pediatrics"
                     android:textSize="16sp"
                     android:textColor="#5A5A5A"
                     android:layout_width="wrap_content"
