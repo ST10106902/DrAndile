@@ -58,4 +58,8 @@
     <string name="dr_andile_tshabalala">Dr. Andile Tshabalala</string>
     <string name="doctor_imagew">Doctor Image</string>
     <string name="meet_our_doctors">Meet Our Doctors</string>
+    <string name="login">Login</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="admin_login">Admin Login</string>
 </resources>
