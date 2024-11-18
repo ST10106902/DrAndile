@@ -25,7 +25,7 @@
             android:name=".EditAppointmentActivity"
             android:exported="false" />
         <activity android:name=".AdminLoginActivity" />
-        <activity android:name=".Admin" android:enabled="false" />
+        <activity android:name=".Admin" android:exported="false" />
 
         <activity
             android:name=".BookAppointment"
