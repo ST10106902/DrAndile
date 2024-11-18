@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class Register : AppCompatActivity() {
 
@@ -58,13 +59,21 @@ class Register : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Registration success
-                    Toast.makeText(this, "User registered successfully", Toast.LENGTH_SHORT).show()
-                    // Redirect to LoginActivity or MainActivity
-                    startActivity(Intent(this, Login::class.java))
-                    finish()
+                    val uid = auth.currentUser?.uid
+                    if (uid != null) {
+                        // Save user role as "user" in Firebase Database
+                        val database = FirebaseDatabase.getInstance().reference.child("users").child(uid)
+                        val userInfo = mapOf(
+                            "email" to email,
+                            "role" to "user" // Default role
+                        )
+                        database.setValue(userInfo).addOnCompleteListener {
+                            Toast.makeText(this, "User registered successfully", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this, Login::class.java))
+                            finish()
+                        }
+                    }
                 } else {
-                    // If registration fails, display a message to the user.
                     Toast.makeText(this, "Registration Failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
