@@ -11,8 +11,8 @@ import com.google.firebase.database.FirebaseDatabase
 
 class AdminLoginActivity : AppCompatActivity() {
 
-    private lateinit var emailEditText: EditText
-    private lateinit var passwordEditText: EditText
+    private lateinit var emailInput: EditText
+    private lateinit var passwordInput: EditText
     private lateinit var loginButton: Button
     private lateinit var auth: FirebaseAuth
 
@@ -20,52 +20,57 @@ class AdminLoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_login)
 
-        emailEditText = findViewById(R.id.emailEditText)
-        passwordEditText = findViewById(R.id.passwordEditText)
-        loginButton = findViewById(R.id.loginButton)
+        // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
 
+        // Initialize views
+        emailInput = findViewById(R.id.admin_email_input)
+        passwordInput = findViewById(R.id.admin_password_input)
+        loginButton = findViewById(R.id.admin_login_button)
+
+        // Set onClickListener for login button
         loginButton.setOnClickListener {
-            val email = emailEditText.text.toString().trim()
-            val password = passwordEditText.text.toString().trim()
-
-            if (email.isNotEmpty() && password.isNotEmpty()) {
-                auth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            // Check if the logged-in user is an admin
-                            val user = auth.currentUser
-                            val uid = user?.uid
-
-                            if (uid != null) {
-                                checkIfAdmin(uid)
-                            }
-                        } else {
-                            Toast.makeText(this, "Login failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-            } else {
-                Toast.makeText(this, "Please enter both email and password", Toast.LENGTH_SHORT).show()
-            }
+            loginAdmin()
         }
     }
 
-    private fun checkIfAdmin(uid: String) {
-        val database = FirebaseDatabase.getInstance().reference
-        database.child("users").child(uid).child("role")
-            .get()
-            .addOnSuccessListener { snapshot ->
-                val role = snapshot.getValue(String::class.java)
-                if (role == "admin") {
-                    // Navigate to Admin Page
-                    startActivity(Intent(this, Admin::class.java))
-                    finish()
+    private fun loginAdmin() {
+        val email = emailInput.text.toString().trim()
+        val password = passwordInput.text.toString().trim()
+
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Authenticate admin
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Verify admin role
+                    val user = auth.currentUser
+                    if (user != null) {
+                        val uid = user.uid
+                        val database = FirebaseDatabase.getInstance().reference.child("users").child(uid)
+                        database.child("role").get().addOnSuccessListener { snapshot ->
+                            val role = snapshot.getValue(String::class.java)
+                            if (role == "admin") {
+                                // Redirect to Admin Page
+                                Toast.makeText(this, "Admin Login Successful", Toast.LENGTH_SHORT).show()
+                                startActivity(Intent(this, Admin::class.java))
+                                finish()
+                            } else {
+                                Toast.makeText(this, "Access Denied: Not an admin", Toast.LENGTH_SHORT).show()
+                                auth.signOut()
+                            }
+                        }.addOnFailureListener {
+                            Toast.makeText(this, "Failed to verify user role", Toast.LENGTH_SHORT).show()
+                            auth.signOut()
+                        }
+                    }
                 } else {
-                    Toast.makeText(this, "Access denied: Admins only", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Login Failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "Failed to verify role", Toast.LENGTH_SHORT).show()
             }
     }
 }
