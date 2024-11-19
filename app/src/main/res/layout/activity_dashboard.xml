@@ -5,13 +5,27 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dashboard"
-    android:background="@drawable/img_18">
+    android:background="@drawable/img_18"
+    android:backgroundTint="#36E1F4"
+    tools:context=".Dashboard">
 
     <ListView
         android:id="@+id/appointmentListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_width="391dp"
+        android:layout_height="471dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#423BFF"
+        android:text="Logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appointmentListView"
+        app:layout_constraintVertical_bias="0.504" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
