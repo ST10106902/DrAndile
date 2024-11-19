@@ -11,12 +11,12 @@ import com.google.firebase.auth.FirebaseAuth
 
 class Login : AppCompatActivity() {
 
-    private lateinit var usernameEditText: EditText
-    private lateinit var passwordEditText: EditText
+    lateinit var usernameEditText: EditText
+    lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
     private lateinit var newUserTextView: TextView
     private lateinit var adminLoginTextView: TextView  // Added for Admin login
-    private lateinit var auth: FirebaseAuth
+    lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +48,7 @@ class Login : AppCompatActivity() {
         }
     }
 
-    private fun performLogin() {
+    fun performLogin() {
         val email = usernameEditText.text.toString().trim()
         val password = passwordEditText.text.toString().trim()
 

@@ -13,7 +13,7 @@ class AdminLoginActivity : AppCompatActivity() {
     private lateinit var usernameEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
-    private lateinit var auth: FirebaseAuth
+    lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

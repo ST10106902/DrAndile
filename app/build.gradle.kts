@@ -1,11 +1,11 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("com.google.gms.google-services")
+    id("com.google.gms.google-services") // Google Services plugin
 }
 
 android {
-    namespace = "com.example.drandile"
+    namespace = "com.example.drandile" // Namespace for R.java
     compileSdk = 34
 
     defaultConfig {
@@ -15,7 +15,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner" // Test runner
     }
 
     buildTypes {
@@ -38,7 +38,7 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
+        viewBinding = true // Enable view binding
     }
 }
 
@@ -56,8 +56,16 @@ dependencies {
 
     implementation(platform("com.google.firebase:firebase-bom:33.5.0"))
     implementation(libs.firebase.auth)
+    implementation(libs.androidx.junit.ktx)
 
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.junit) // JUnit 4 for unit tests
+    testImplementation("org.mockito:mockito-core:4.11.0") // Mockito core for mocking
+
+    // Inline mock maker for final classes
+    testImplementation("org.mockito:mockito-inline:4.11.0")
+
+    // AndroidX Test for instrumented tests
+    androidTestImplementation("androidx.test.ext:junit:1.1.5") // Latest JUnit version
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1") // Espresso
+    androidTestImplementation("androidx.test:core:1.5.0") // Core testing library
 }
