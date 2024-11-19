@@ -15,6 +15,7 @@ class Login : AppCompatActivity() {
     private lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
     private lateinit var newUserTextView: TextView
+    private lateinit var adminLoginTextView: TextView  // Added for Admin login
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +30,7 @@ class Login : AppCompatActivity() {
         passwordEditText = findViewById(R.id.login_password_id)
         loginButton = findViewById(R.id.login_btn)
         newUserTextView = findViewById(R.id.textView2)
+        adminLoginTextView = findViewById(R.id.adminLoginText)  // Initialize Admin login TextView
 
         // Set onClickListener for login button
         loginButton.setOnClickListener {
@@ -38,6 +40,11 @@ class Login : AppCompatActivity() {
         // Set onClickListener for new user TextView to go to Register screen
         newUserTextView.setOnClickListener {
             startActivity(Intent(this, Register::class.java))
+        }
+
+        // Set onClickListener for Admin Login TextView
+        adminLoginTextView.setOnClickListener {
+            performAdminLogin()
         }
     }
 
@@ -64,5 +71,27 @@ class Login : AppCompatActivity() {
                     Toast.makeText(this, "Login Failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
+    }
+
+    private fun performAdminLogin() {
+        val email = usernameEditText.text.toString().trim()
+        val password = passwordEditText.text.toString().trim()
+
+        // Check if both fields are filled
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Please enter both email and password for Admin.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // For Admin Login, you can add a specific email/password check or role validation
+        if (email == "admin@example.com" && password == "adminpassword") {
+            // Simulate admin login
+            Toast.makeText(this, "Admin Login Successful", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, Admin::class.java))  // Admin HomePage
+            finish()
+        } else {
+            // If admin credentials don't match, show a failure message
+            Toast.makeText(this, "Admin Login Failed", Toast.LENGTH_SHORT).show()
+        }
     }
 }

@@ -8,7 +8,7 @@
     tools:context=".Login"
     android:background="@drawable/img_1">
 
-
+    <!-- Login Text -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -17,7 +17,6 @@
         android:textColor="@color/white"
         android:textSize="24dp"
         android:textStyle="bold"
-        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/login_Username_id"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -25,6 +24,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
 
+    <!-- Username Input -->
     <EditText
         android:id="@+id/login_Username_id"
         android:layout_width="292dp"
@@ -36,7 +36,6 @@
         android:hint="Username"
         android:inputType="text"
         android:paddingStart="20dp"
-        android:paddingLeft="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/login_password_id"
@@ -46,6 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.5" />
 
+    <!-- Password Input -->
     <EditText
         android:id="@+id/login_password_id"
         android:layout_width="308dp"
@@ -69,6 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/login_Username_id"
         app:layout_constraintVertical_bias="0.5" />
 
+    <!-- Login Button -->
     <Button
         android:id="@+id/login_btn"
         android:layout_width="147dp"
@@ -82,6 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/login_password_id"
         app:layout_constraintVertical_bias="0.5" />
 
+    <!-- New User Click Here Text -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -98,5 +100,20 @@
         app:layout_constraintTop_toBottomOf="@+id/login_btn"
         app:layout_constraintVertical_bias="0.5" />
 
-
+    <!-- Admin Login Option -->
+    <TextView
+        android:id="@+id/adminLoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login as Admin"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:layout_constraintVertical_bias="0.2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
