@@ -7,12 +7,11 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 
 class AdminLoginActivity : AppCompatActivity() {
 
-    private lateinit var emailInput: EditText
-    private lateinit var passwordInput: EditText
+    private lateinit var usernameEditText: EditText
+    private lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
     private lateinit var auth: FirebaseAuth
 
@@ -24,51 +23,36 @@ class AdminLoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         // Initialize views
-        emailInput = findViewById(R.id.admin_email_input)
-        passwordInput = findViewById(R.id.admin_password_input)
-        loginButton = findViewById(R.id.admin_login_button)
+        usernameEditText = findViewById(R.id.admin_username)
+        passwordEditText = findViewById(R.id.admin_password)
+        loginButton = findViewById(R.id.admin_login_btn)
 
         // Set onClickListener for login button
         loginButton.setOnClickListener {
-            loginAdmin()
+            performLogin()
         }
     }
 
-    private fun loginAdmin() {
-        val email = emailInput.text.toString().trim()
-        val password = passwordInput.text.toString().trim()
+    private fun performLogin() {
+        val email = usernameEditText.text.toString().trim()
+        val password = passwordEditText.text.toString().trim()
 
+        // Check if both fields are filled
         if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please enter both email and password.", Toast.LENGTH_SHORT).show()
             return
         }
 
-        // Authenticate admin
+        // Use FirebaseAuth to sign in
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Verify admin role
-                    val user = auth.currentUser
-                    if (user != null) {
-                        val uid = user.uid
-                        val database = FirebaseDatabase.getInstance().reference.child("users").child(uid)
-                        database.child("role").get().addOnSuccessListener { snapshot ->
-                            val role = snapshot.getValue(String::class.java)
-                            if (role == "admin") {
-                                // Redirect to Admin Page
-                                Toast.makeText(this, "Admin Login Successful", Toast.LENGTH_SHORT).show()
-                                startActivity(Intent(this, Admin::class.java))
-                                finish()
-                            } else {
-                                Toast.makeText(this, "Access Denied: Not an admin", Toast.LENGTH_SHORT).show()
-                                auth.signOut()
-                            }
-                        }.addOnFailureListener {
-                            Toast.makeText(this, "Failed to verify user role", Toast.LENGTH_SHORT).show()
-                            auth.signOut()
-                        }
-                    }
+                    // Admin login success, navigate to the Admin Dashboard or HomePage
+                    Toast.makeText(this, "Admin Login Successful", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, Admin::class.java))  // Change this to your Admin Dashboard or appropriate activity
+                    finish()
                 } else {
+                    // If sign-in fails, display a message to the user
                     Toast.makeText(this, "Login Failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
