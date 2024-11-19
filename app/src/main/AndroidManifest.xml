@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrAndile"
         tools:targetApi="31">
-
+        <activity
+            android:name=".LogoutPage"
+            android:exported="false" />
         <activity
             android:name=".item_appointment"
             android:exported="false" />
@@ -25,8 +27,9 @@
             android:name=".EditAppointmentActivity"
             android:exported="false" />
         <activity android:name=".AdminLoginActivity" />
-        <activity android:name=".Admin" android:exported="false" />
-
+        <activity
+            android:name=".Admin"
+            android:exported="false" />
         <activity
             android:name=".BookAppointment"
             android:exported="false" />
